@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0" />
+
+    <title>safranek.dev</title>
+
+    <link rel="stylesheet"
+          href="~/_content/SafraUI/css/safra-ui.css"
+          asp-append-version="true" />
+
+    <link rel="stylesheet"
+          href="~/css/site.css"
+          asp-append-version="true" />
+
+    @await RenderSectionAsync("Styles", required: false)
+</head>
+
+<body>
+<header class="site-header">
+    <nav class="site-navigation" aria-label="Main navigation">
+        <a asp-page="/Index">Home</a>
+        <a asp-page="/Projects/Index">Projects</a>
+        <a asp-page="/About">About</a>
+        <a asp-page="/Contact">Contact</a>
+    </nav>
+</header>
+
+<main id="main-content">
+    @RenderBody()
+</main>
+
+<footer class="site-footer">
+    <span>&copy; @DateTime.Now.Year David Šafránek</span>
+</footer>
+
+<script type="module"
+        src="~/_content/SafraUI/js/safra-ui.js"
+        asp-append-version="true"></script>
+
+<script type="module"
+        src="~/js/site.js"
+        asp-append-version="true"></script>
+
+@await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
